@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #1e1e2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #2a2a3e;
+            padding: 40px;
+            border-radius: 12px;
+            width: 360px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        h1 { color: white; text-align: center; margin-bottom: 24px; font-size: 22px; }
+
+        label { color: #aaa; font-size: 13px; display: block; margin-bottom: 4px; }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #1e1e2e;
+            color: white;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #7c3aed;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover { background-color: #6d28d9; }
+
+        .link { text-align: center; margin-top: 10px; }
+        .link a { color: #7c3aed; text-decoration: none; font-size: 13px; }
+
+        .erro { background-color: #ff4444; color: white; padding: 10px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; text-align: center; }
+        .sucesso { background-color: #22c55e; color: white; padding: 10px; border-radius: 8px; margin-bottom: 16px; font-size: 13px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📝 Criar Conta</h1>
+
+        {% if mensagem %}
+            <div class="{{ 'sucesso' if sucesso else 'erro' }}">{{ mensagem }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <label>Usuário</label>
+            <input type="text" name="nome" placeholder="Escolha um usuário" required>
+
+            <label>Senha</label>
+            <input type="password" name="senha" placeholder="Escolha uma senha" required>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <div class="link">
+            <a href="/">Já tem conta? Faça login</a>
+        </div>
+    </div>
+</body>
+</html>

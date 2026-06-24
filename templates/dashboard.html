@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #1e1e2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-color: #2a2a3e;
+            padding: 40px;
+            border-radius: 12px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        h1 { color: white; font-size: 26px; margin-bottom: 10px; }
+        p { color: #aaa; margin-bottom: 30px; font-size: 15px; }
+
+        .badge {
+            background-color: #7c3aed;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #ff4444;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover { background-color: #cc0000; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>👋 Olá, {{ nome }}!</h1>
+        <p>Você está logado no sistema.</p>
+        <div class="badge">✅ Acesso autorizado</div>
+        <br>
+        <a href="/logout">Sair</a>
+    </div>
+</body>
+</html>
